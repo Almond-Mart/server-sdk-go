@@ -630,6 +630,8 @@ func payloaderForCodec(codec webrtc.RTPCodecCapability) (rtp.Payloader, error) {
 	switch strings.ToLower(codec.MimeType) {
 	case strings.ToLower(webrtc.MimeTypeH264):
 		return &codecs.H264Payloader{}, nil
+	case strings.ToLower(webrtc.MimeTypeAV1):
+		return &codecs.AV1Payloader{}, ni
 	case strings.ToLower(webrtc.MimeTypeOpus):
 		return &codecs.OpusPayloader{}, nil
 	case strings.ToLower(webrtc.MimeTypeVP8):
